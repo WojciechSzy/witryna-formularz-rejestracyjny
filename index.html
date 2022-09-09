@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <!-- Kodowanie znaków -->
+    <meta charset="utf-8">
+    <!--Biblioteki bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- Tytuł -->
+    <title>Przesyłanie danych z formularza</title>
+    <!-- Autor -->
+    <meta name="author" content="Wojciech Szylkiewicz">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Linia na górze -->
+    <hr class="separator" id="width100">
+
+    <!-- Div do wspólnej szerokości -->
+    <div id="maincontent">
+
+        <!-- Baner -->
+        <div class="dgrey-background" id="baner">
+            <h1>STWÓRZ KONTO</h1>
+        </div>
+
+        <!-- Przerwa -->
+        <div class="padding"></div>
+    
+        <!-- Formularz -->
+        <div>
+            <form method="POST" action="/dane.php">
+                <fieldset class="lgrey-background">
+                    <!-- Ramka -->
+                    <legend id="legend">
+                    <!-- Tytuł -->
+                    <div class="padding"></div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="margin-left-small">TWOJE DANE OSOBISTE</h1>
+                        </div>    
+                    </div>
+                    <!-- Linia -->
+                    <hr class="separator">
+                    <!-- Część 1 -->
+                    <div class="row">
+                        <!-- Opisy -->
+                        <div class="col-md-2">
+                            <p class="margin-left">Imię</p>
+                            <p class="margin-left">Nazwisko</p>
+                            <p class="margin-left">E-mail</p>
+                            <p class="margin-left">Hasło</p>
+                        </div>
+                        <!-- Pola -->
+                        <div class="col-md-4">
+                            <input class="inputs" type="text" name="name" id="name"><br>
+                            <input class="inputs" type="text" name="surname" id="surname"><br>
+                            <input class="inputs" type="email" name="email" id="email" placeholder="adres@e-mail.pl"><br>
+                            <input class="inputs" type="password" name="password" id="password">
+                        </div>
+                        <!-- Dopisek -->
+                        <div class="col-md-6">
+                            <p></p><br>
+                            <p></p><br>
+                            <p></p><br>
+                            <p>(min. 5 znaków)</p>
+                        </div>
+                    </div>
+                    <!-- Newsletter -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input class="margin-left-small" type="checkbox" name="newsletter" id="newsletter" value="yes">
+                            <label for="newsletter">Zapisz się do naszego newslettera</label>
+                        </div>
+                    </div>
+                    <div class="padding"></div>
+                    <!-- Tytuł 2 -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="margin-left-small">TWÓJ ADRES</h1>
+                        </div>
+                    </div>
+                    <!-- Linia 2 -->
+                    <hr class="separator">
+                    <!-- Część 2 -->
+                    <div class="row">
+                        <!-- Opisy -->
+                        <div class="col-md-2">
+                            <p class="red margin-left">Imię</p>
+                            <p class="red margin-left">Nazwisko</p>
+                            <p class="margin-left">Firma</p>
+                            <p class="red margin-left">Ulica i numer</p>
+                            <p class="red margin-left">Kod pocztowy</p>
+                            <p class="red margin-left">Miasto</p>
+                            <p class="red margin-left">Kraj</p>
+                            <p class="margin-left">Nr telefonu</p>
+                            <p class="red margin-left" id="instruction">Nadaj adresowi skróconą nazwę za pomocą której będziesz go wybierać</p>
+                        </div>
+                        <!-- Pola -->
+                        <div class="col-md-4">
+                            <input class="inputs" type="text" name="name2" id="name2" required="required"><br>
+                            <input class="inputs" type="text" name="surname2" id="surname2" required="required"><br>
+                            <input class="inputs" type="text" name="company" id="company"><br>
+                            <input class="inputs" type="text" name="street" id="street" required="required"><br>
+                            <input class="inputs" type="text" name="postcode" id="postcode" required="required"><br>
+                            <input class="inputs" type="text" name="city" id="city" required="required"><br>
+                            <select class="inputs" name="country" id="country" required="required">
+                                <option value="Poland">Polska</option>
+                                <option value="other">Reszta świata</option>
+                            </select><br>
+                            <input class="inputs" type="text" name="phone" id="phone"><br>
+                            <input class="inputs" type="text" name="addrname" id="addrname" required="required" placeholder="Mój adres"><br>
+                        </div>
+                        <div class="col-md-6">
+                        </div>
+                    </div>
+                    <!-- Przycisk -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="submit" id="przycisk" value="Zarejestruj się >">
+                        </div>
+                    </div>
+                    </legend>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
